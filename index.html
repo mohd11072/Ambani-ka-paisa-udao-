@@ -1,102 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spend Ambani's Money</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      text-align: center;
-    }
-    header {
-      padding: 20px;
-    }
-    header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    h1 {
-      margin: 10px 0;
-      font-size: 28px;
-    }
-    #money {
-      background: linear-gradient(to right, #00c853, #00e676);
-      color: white;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .item {
-      background: white;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .item img {
-      width: 95%;
-      border-radius: 12px;
-    }
-    .name {
-      font-size: 22px;
-      margin-top: 10px;
-    }
-    .price {
-      color: green;
-      font-size: 18px;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .buttons button {
-      padding: 10px 20px;
-      border: none;
-      font-size: 16px;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-    }
-    .buy { background: green; }
-    .sell { background: grey; }
-    .sell.active { background: red; }
-    .quantity {
-      width: 50px;
-      font-size: 18px;
-      font-weight: bold;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      text-align: center;
-      background: white;
-      line-height: 40px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Spend Ambani's Money</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px 10px 10px;
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+
+    #money {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(to right, #00c853, #00e676);
+      color: white;
+      padding: 25px;
+      font-size: 32px;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    .item {
+      background: white;
+      border-radius: 14px;
+      margin: 25px auto;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 22px;
+    }
+
+    .item img {
+      width: 95%;
+      border-radius: 14px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 15px 0 5px;
+    }
+
+    .price {
+      color: green;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .buttons button {
+      padding: 14px 36px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .buy {
+      background: #00c853;
+    }
+
+    .sell {
+      background: #b0bec5;
+    }
+
+    .sell.active {
+      background: #d32f2f;
+    }
+
+    .quantity {
+      font-size: 22px;
+      font-weight: bold;
+      width: 70px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 50px;
+      background: white;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="https://iili.io/Fn6iiRj.png" alt="Mukesh Ambani" />
-    <h1>Spend Ambani's Money</h1>
-  </header>
-  <div id="money">₹9,00,00,00,00,000</div>
-  <div id="items"></div>
 
-  <script>
-    let totalMoney = 9000000000000;
-    const items = [
-      { name: "Samosa", price: 20, image: "https://images.pexels.com/photos/14477873/pexels-photo-14477873.jpeg" },
-      { name: "Vada Pav", price: 30, image: "https://images.pexels.com/photos/17433337/pexels-photo-17433337.jpeg" }
-      { name: "Starbucks Coffee", price: 300, image: "https://images.unsplash.com/photo-1542729779-11d8fe8e25f6" },
+  <header>
+    <img src="https://iili.io/Fn6iiRj.png" alt="Mukesh Ambani">
+    <h1>Spend Ambani's Money</h1>
+  </header>
+
+  <div id="money">₹9,00,00,00,00,000</div>
+
+  <div id="items"></div>
+
+  <script>
+    let totalMoney = 9000000000000;
+
+    const items = [
+      { name: "Vada Pav", price: 30, image: "https://images.pexels.com/photos/17433337/pexels-photo-17433337.jpeg" },
+      { name: "Samosa", price: 20, image: "https://images.pexels.com/photos/14477873/pexels-photo-14477873.jpeg" },
+      { name: "Starbucks Coffee", price: 300, image: "https://images.unsplash.com/photo-1542729779-11d8fe8e25f6" },
       { name: "Pizza", price: 500, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" },
       { name: "Burger", price: 150, image: "https://images.unsplash.com/photo-1542574271-7f3b92e6c821" },
       { name: "Chole Bhature", price: 120, image: "https://iili.io/Fx5yMlf.png" },
@@ -148,49 +174,59 @@
       { name: "Bullet Train", price: 10000000000, image: "https://images.unsplash.com/photo-1527295110-5145f6b148d0" },
       { name: "Bollywood Movie Production", price: 1000000000, image: "https://images.pexels.com/photos/8088374/pexels-photo-8088374.jpeg" },
       { name: "IPL Team (Mumbai Indians)", price: 15000000000, image: "https://iili.io/FokZZKB.png" }
-      ];
-    const container = document.getElementById("items");
-    const money = document.getElementById("money");
+    ];  
 
-    items.forEach((item, i) => {
-      const div = document.createElement("div");
-      div.className = "item";
-      div.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" />
-        <div class="name">${item.name}</div>
-        <div class="price">₹${item.price}</div>
-        <div class="buttons">
-          <button class="sell" id="sell-${i}">Sell</button>
-          <div class="quantity" id="qty-${i}">0</div>
-          <button class="buy" id="buy-${i}">Buy</button>
-        </div>
-      `;
-      container.appendChild(div);
+    // Sort items from cheapest to most expensive
+    items.sort((a, b) => a.price - b.price);
 
-      let qty = 0;
-      document.getElementById(`buy-${i}`).onclick = () => {
-        if (totalMoney >= item.price) {
-          qty++;
-          totalMoney -= item.price;
-          update();
-        }
-      };
-      document.getElementById(`sell-${i}`).onclick = () => {
-        if (qty > 0) {
-          qty--;
-          totalMoney += item.price;
-          update();
-        }
-      };
+    const itemsContainer = document.getElementById("items");
+    const moneyDisplay = document.getElementById("money");
 
-      function update() {
-        document.getElementById("qty-" + i).innerText = qty;
-        money.innerText = "₹" + totalMoney.toLocaleString();
-        const sellBtn = document.getElementById(`sell-${i}`);
-        if (qty > 0) sellBtn.classList.add("active");
-        else sellBtn.classList.remove("active");
-      }
-    });
-  </script>
+    items.forEach((item, index) => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <div class="name">${item.name}</div>
+        <div class="price">₹${item.price.toLocaleString()}</div>
+        <div class="buttons">
+          <button class="sell" id="sell-${index}">Sell</button>
+          <div class="quantity" id="qty-${index}">0</div>
+          <button class="buy" id="buy-${index}">Buy</button>
+        </div>
+      `;
+      itemsContainer.appendChild(div);
+
+      let qty = 0;
+
+      document.getElementById(`buy-${index}`).onclick = () => {
+        if (totalMoney >= item.price) {
+          qty++;
+          totalMoney -= item.price;
+          update(index, qty);
+        }
+      };
+
+      document.getElementById(`sell-${index}`).onclick = () => {
+        if (qty > 0) {
+          qty--;
+          totalMoney += item.price;
+          update(index, qty);
+        }
+      };
+
+      function update(i, q) {
+        document.getElementById(`qty-${i}`).innerText = q;
+        document.getElementById("money").innerText = "₹" + totalMoney.toLocaleString();
+        const sellBtn = document.getElementById(`sell-${i}`);
+        if (q > 0) {
+          sellBtn.classList.add("active");
+        } else {
+          sellBtn.classList.remove("active");
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>
