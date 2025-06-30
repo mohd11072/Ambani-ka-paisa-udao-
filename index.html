@@ -1,9 +1,27 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spend Ambani's Money - Fun simulator to waste ₹9.00 Lakh Crore on crazy items!" />
+  <meta name="keywords" content="Ambani, spend Ambani's money, Mukesh Ambani, money simulator, Indian billionaire" />
+  <meta name="author" content="Mohammad Haider" />
   <title>Spend Ambani's Money</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Spend Ambani's Money",
+    "url": "https://ambanikapaisaudao.netlify.app",
+    "author": {
+      "@type": "Person",
+      "name": "Mohammad Haider"
+    },
+    "description": "Spend Ambani's Money on cars, jets, luxury and food - a fun simulator game"
+  }
+  </script>
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f5f5f5;
@@ -21,17 +39,18 @@
     }
     h1 {
       margin: 10px 0;
-      font-size: 28px;
+      font-size: 30px;
     }
     #money {
       background: linear-gradient(to right, #00c853, #00e676);
       color: white;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
+      padding: 30px 10px;
+      font-size: 36px;
+      font-weight: 900;
       position: sticky;
       top: 0;
       z-index: 10;
+      word-wrap: break-word;
     }
     .item {
       background: white;
@@ -58,27 +77,53 @@
       justify-content: center;
       gap: 10px;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
     .buttons button {
-      padding: 10px 20px;
+      padding: 18px 38px;
+      min-width: 140px;
+      font-size: 20px;
+      font-weight: bold;
       border: none;
-      font-size: 16px;
-      border-radius: 8px;
+      border-radius: 10px;
       color: white;
       cursor: pointer;
+      transition: all 0.2s ease-in-out;
     }
-    .buy { background: green; }
-    .sell { background: grey; }
-    .sell.active { background: red; }
+    .buy {
+      background: #4CAF50;
+    }
+    .buy:hover {
+      background: #45a049;
+    }
+    .sell {
+      background: #757575;
+    }
+    .sell.active {
+      background: #e53935;
+    }
     .quantity {
-      width: 50px;
-      font-size: 18px;
+      width: 70px;
+      font-size: 22px;
       font-weight: bold;
       border: 2px solid #ccc;
       border-radius: 8px;
       text-align: center;
       background: white;
-      line-height: 40px;
+      line-height: 48px;
+    }
+    .social {
+      margin: 20px;
+    }
+    .social a {
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      color: #0077b5;
+    }
+    @media screen and (max-width: 600px) {
+      #money { font-size: 30px; }
+      .buttons button { padding: 16px 26px; font-size: 18px; min-width: 120px; }
     }
   </style>
 </head>
@@ -88,7 +133,13 @@
     <h1>Spend Ambani's Money</h1>
   </header>
   <div id="money">₹9,00,00,00,00,000</div>
-  <div id="items"></div>  <script>
+  <div class="social">
+    <a href="https://wa.me/?text=Spend%20Ambani's%20Money%20https://ambanikapaisaudao.netlify.app" target="_blank">Share on WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ambanikapaisaudao.netlify.app" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+  </div>
+  <div id="items"></div>
+  <script>
     let totalMoney = 9000000000000;
     const items = [
       { name: "Samosa", price: 20, image: "https://images.pexels.com/photos/14477873/pexels-photo-14477873.jpeg" },
@@ -156,7 +207,7 @@
       div.innerHTML = `
         <img src="${item.image}" alt="${item.name}" />
         <div class="name">${item.name}</div>
-        <div class="price">₹${item.price}</div>
+        <div class="price">₹${item.price.toLocaleString()}</div>
         <div class="buttons">
           <button class="sell" id="sell-${i}">Sell</button>
           <div class="quantity" id="qty-${i}">0</div>
@@ -189,5 +240,6 @@
         else sellBtn.classList.remove("active");
       }
     });
-  </script></body>
+  </script>
+</body>
 </html>
