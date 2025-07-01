@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Spend Ambani's Money - Fun simulator to waste ₹9.00 Lakh Crore on crazy items!" />
+  <meta name="description" content="Spend Ambani's Money - Fun simulator to waste ₹9.10 Lakh Crore on crazy items!" />
   <meta name="keywords" content="Ambani, spend Ambani's money, Mukesh Ambani, money simulator, Indian billionaire" />
   <meta name="author" content="Mohammad Haider" />
-  <title>Spend Ambani's Money</title>
+  <meta property="og:title" content="Spend Ambani's Money" />
+  <meta property="og:description" content="Fun simulator to waste ₹9.10 Lakh Crore on luxury and crazy items!" />
+  <meta property="og:image" content="https://iili.io/Fn6iiRj.png" />
+  <meta property="og:url" content="https://ambanikapaisaudao.netlify.app" />
+  <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Spend Ambani's Money",
-    "url": "https://ambanikapaisaudao.netlify.app",
-    "author": {
-      "@type": "Person",
-      "name": "Mohammad Haider"
-    },
-    "description": "Spend Ambani's Money on cars, jets, luxury and food - a fun simulator game"
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Spend Ambani's Money",
+      "url": "https://ambanikapaisaudao.netlify.app",
+      "description": "Fun simulator to spend Mukesh Ambani's huge fortune on crazy items.",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Haider"
+      }
+    }
   </script>
+  <title>Spend Ambani's Money</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -51,6 +56,7 @@
       top: 0;
       z-index: 10;
       word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     .item {
       background: white;
@@ -80,8 +86,8 @@
       flex-wrap: wrap;
     }
     .buttons button {
-      padding: 18px 38px;
-      min-width: 140px;
+      padding: 20px 40px;
+      min-width: 160px;
       font-size: 20px;
       font-weight: bold;
       border: none;
@@ -90,18 +96,10 @@
       cursor: pointer;
       transition: all 0.2s ease-in-out;
     }
-    .buy {
-      background: #4CAF50;
-    }
-    .buy:hover {
-      background: #45a049;
-    }
-    .sell {
-      background: #757575;
-    }
-    .sell.active {
-      background: #e53935;
-    }
+    .buy { background: #4CAF50; }
+    .buy:hover { background: #45a049; }
+    .sell { background: #757575; }
+    .sell.active { background: #e53935; }
     .quantity {
       width: 70px;
       font-size: 22px;
@@ -112,18 +110,13 @@
       background: white;
       line-height: 48px;
     }
-    .social {
-      margin: 20px;
-    }
-    .social a {
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-      color: #0077b5;
-    }
     @media screen and (max-width: 600px) {
-      #money { font-size: 30px; }
-      .buttons button { padding: 16px 26px; font-size: 18px; min-width: 120px; }
+      #money { font-size: 28px; }
+      .buttons button {
+        padding: 18px 28px;
+        font-size: 18px;
+        min-width: 130px;
+      }
     }
   </style>
 </head>
@@ -132,15 +125,10 @@
     <img src="https://iili.io/Fn6iiRj.png" alt="Mukesh Ambani" />
     <h1>Spend Ambani's Money</h1>
   </header>
-  <div id="money">₹9,00,00,00,00,000</div>
-  <div class="social">
-    <a href="https://wa.me/?text=Spend%20Ambani's%20Money%20https://ambanikapaisaudao.netlify.app" target="_blank">Share on WhatsApp</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ambanikapaisaudao.netlify.app" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com" target="_blank">Instagram</a>
-  </div>
+  <div id="money">₹9,10,00,00,00,000</div>
   <div id="items"></div>
   <script>
-    let totalMoney = 9000000000000;
+    let totalMoney = 9100000000000;
     const items = [
       { name: "Samosa", price: 20, image: "https://images.pexels.com/photos/14477873/pexels-photo-14477873.jpeg" },
       { name: "Vada Pav", price: 30, image: "https://images.pexels.com/photos/17433337/pexels-photo-17433337.jpeg" },
@@ -197,7 +185,6 @@
       { name: "Bollywood Movie Production", price: 1000000000, image: "https://images.pexels.com/photos/8088374/pexels-photo-8088374.jpeg" },
       { name: "IPL Team (Mumbai Indians)", price: 15000000000, image: "https://iili.io/FokZZKB.png" }
     ];
-
     const container = document.getElementById("items");
     const money = document.getElementById("money");
 
